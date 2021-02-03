@@ -7,11 +7,11 @@ const getRandomNumber = function (min, max) {
     
 getRandomNumber();
     
-const acceptCommentLength = function (min, max) {
+const checkCommentLength = function (min, max) {
   if (min > 0 && max <= 140) {
     return true;
   }
   return false;
 };
     
-acceptCommentLength();
+checkCommentLength(); 
