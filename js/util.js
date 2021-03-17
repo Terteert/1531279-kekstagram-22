@@ -1,4 +1,4 @@
-const makeUniqueRandomNumber = (min, max) => {
+const MAKE_UNIQUE_RANDOM_NUMBER = (min, max) => {
   const previousValues = [];
   
   return () => {
@@ -14,15 +14,15 @@ const makeUniqueRandomNumber = (min, max) => {
   };
 };
 
-const getRandomNumber = function ( min, max) {
+const GET_RANDOM_NUMBER = function ( min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const checkCommentLength = function (min, max) {
+const CHECK_COMMENT_LENGTH = function (min, max) {
   if (min > 0 && max <= 140) {
     return true;
   }
   return false;
 };
 
-export {makeUniqueRandomNumber, getRandomNumber, checkCommentLength};
+export {MAKE_UNIQUE_RANDOM_NUMBER, GET_RANDOM_NUMBER, CHECK_COMMENT_LENGTH};
