@@ -1,8 +1,8 @@
-import {GET_RANDOM_NUMBER, MAKE_UNIQUE_RANDOM_NUMBER} from './util.js'
+import {getRandomNumber, makeUniqueRandomNumber} from './util.js'
 
-const getUniqueId = MAKE_UNIQUE_RANDOM_NUMBER(1, 25);
+const getUniqueId = makeUniqueRandomNumber(1, 25);
 
-const messages = [
+const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -10,30 +10,31 @@ const messages = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
-const names = ['Ян', 'Егор', 'Владислав', 'Иван', 'Билли', 'Рикардо', 'Анастасия', 'Саня', 'Михаил', 'Виктор', 'Вадим', 'Чарльз', 'Наташа', 'Валя', 'Люда', 'Геральт', 'Лютик', 'Эмгыр', 'Лето', 'Золтан', 'Леша', 'Дийкстра', 'Регис', 'Элихаль', 'Джихангир'];
+const NAMES = ['Ян', 'Егор', 'Владислав', 'Иван', 'Билли', 'Рикардо', 'Анастасия', 'Саня', 'Михаил', 'Виктор', 'Вадим', 'Чарльз', 'Наташа', 'Валя', 'Люда', 'Геральт', 'Лютик', 'Эмгыр', 'Лето', 'Золтан', 'Леша', 'Дийкстра', 'Регис', 'Элихаль', 'Джихангир'];
 
-let makeComment = function () {
-  let commentator = [];
+const makeComment = function () {
+  const commentator = [];
   for (let i = 1; i <= 3; i++ ) {
-    commentator[i] = {
-      id: GET_RANDOM_NUMBER(1, 10000),
-      avatar: 'img/avatar-' + GET_RANDOM_NUMBER(1, 6) + '.svg',
-      message: messages[GET_RANDOM_NUMBER(0, 5)],
-      name: names[GET_RANDOM_NUMBER(0, names.length - 1)],
-    }
+    commentator.push({
+      id: getRandomNumber(1, 10000),
+      avatar: 'img/avatar-' + getRandomNumber(1, 6) + '.svg',
+      message: MESSAGES[getRandomNumber(0, 5)],
+      name: NAMES[getRandomNumber(0, NAMES.length - 1)],
+    });
   }
+  return commentator
 }
 
-let getPhotoDescriptions = function () {
-  let photoDescriptions = [];
+const getPhotoDescriptions = function () {
+  const photoDescriptions = [];
   for (let i = 1; i <= 25; i++) {
-    photoDescriptions[i] = {
+    photoDescriptions.push({
       id: getUniqueId(),
       url: 'photos/' + i + '.jpg',
       description: 'описание',
-      likes: GET_RANDOM_NUMBER(15, 200),
+      likes: getRandomNumber(15, 200),
       comments: makeComment(),
-    }
+    });
   }
   return photoDescriptions
 };
