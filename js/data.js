@@ -1,4 +1,4 @@
-import {getRandomNumber, makeUniqueRandomNumber} from './util.js'
+import {getRandomNumber, makeUniqueRandomNumber} from './util.js';
 
 const getUniqueId = makeUniqueRandomNumber(1, 25);
 
@@ -29,7 +29,7 @@ const getPhotoDescriptions = function () {
   const photoDescriptions = [];
   for (let i = 1; i <= 25; i++) {
     photoDescriptions.push({
-      id: getUniqueId(),
+      id: i/*getUniqueId()*/,
       url: 'photos/' + i + '.jpg',
       description: 'описание',
       likes: getRandomNumber(15, 200),
