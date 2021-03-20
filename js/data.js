@@ -1,6 +1,4 @@
-import {getRandomNumber, makeUniqueRandomNumber} from './util.js';
-
-const getUniqueId = makeUniqueRandomNumber(1, 25);
+import {getRandomNumber} from './util.js';
 
 const MESSAGES = [
   'Всё отлично!',
@@ -20,7 +18,7 @@ const makeComment = function () {
       avatar: 'img/avatar-' + getRandomNumber(1, 6) + '.svg',
       message: MESSAGES[getRandomNumber(0, 5)],
       name: NAMES[getRandomNumber(0, NAMES.length - 1)],
-    });
+    }); 
   }
   return commentator
 }

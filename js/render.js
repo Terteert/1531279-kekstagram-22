@@ -11,7 +11,7 @@ imageDescriptions.forEach(({url, likes, comments}) => {
   const imageElement = imageTemplate.cloneNode(true);
   imageElement.querySelector('.picture__img').src = url;
   imageElement.querySelector('.picture__likes').textContent = likes;
-  imageElement.querySelector('.picture__likes').textContent = comments.length;
+  imageElement.querySelector('.picture__comments').textContent = comments.length;
   imagesFragment.appendChild(imageElement);
 });
 
