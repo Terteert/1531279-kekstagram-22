@@ -1,3 +1,5 @@
+'use strict';
+
 const makeUniqueRandomNumber = (min, max) => {
   const previousValues = [];
   
